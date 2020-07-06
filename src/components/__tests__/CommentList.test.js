@@ -13,3 +13,7 @@ beforeEach(() => {
 it('renders', () => {
   expect(wrapper.exists()).toBe(true)
 })
+
+it('displays same number of comments as in prop value', () => {
+  expect(wrapper.find('p').length).toEqual(2)
+})
