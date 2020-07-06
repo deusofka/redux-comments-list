@@ -1,12 +1,13 @@
 import React from 'react'
 
-function CommentList () {
+function CommentList ({ comments }) {
   return (
     <div id='comment_list'>
       <h2>Comment List</h2>
       <div id='comments'>
-        <p>This is comment #1</p>
-        <p>This is comment #2</p>
+        {comments.map((comment, index) => {
+          return <p key={index}>{comment}</p>
+        })}
       </div>
     </div>
   )
