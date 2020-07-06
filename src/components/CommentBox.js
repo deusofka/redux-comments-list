@@ -17,6 +17,7 @@ function CommentBox () {
       <div id='inputs'>
         <textarea
           id='input'
+          placeholder='Start typing'
           value={input}
           onChange={handleChange}
           name='input'
