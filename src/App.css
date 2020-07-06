@@ -55,6 +55,8 @@
 #inputs > textarea {
   flex: 1;
   resize: none;
+  padding: 0.4rem;
+  font-size: 1rem;
 }
 
 #inputs > button {
