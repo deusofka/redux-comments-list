@@ -19,3 +19,12 @@ it('has a text area', () => {
 it('has a button', () => {
   expect(wrapper.find('button').length).toEqual(1)
 })
+
+it('updates textarea area value based on user input', () => {
+  expect(wrapper.find('textarea').prop('value')).toEqual('')
+  wrapper
+    .find('textarea')
+    .simulate('change', { target: { value: 'This is comment #1' } })
+  wrapper.update()
+  expect(wrapper.find('textarea').prop('value')).toEqual('This is comment #1')
+})
