@@ -7,6 +7,10 @@ function CommentBox () {
     setInput(event.target.value)
   }
 
+  function handleClick () {
+    setInput('')
+  }
+
   return (
     <div id='comment_box'>
       <h2>Enter your comment</h2>
@@ -18,7 +22,7 @@ function CommentBox () {
         cols='30'
         rows='10'
       />
-      <button>Save Comment</button>
+      <button onClick={handleClick}>Save Comment</button>
     </div>
   )
 }
