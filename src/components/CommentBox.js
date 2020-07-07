@@ -7,8 +7,9 @@ function CommentBox () {
     setInput(event.target.value)
   }
 
-  function handleClick () {
+  function handleClick (event) {
     setInput('')
+    event.target.blur()
   }
 
   return (
