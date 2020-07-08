@@ -70,6 +70,7 @@
 
 #comments > p {
   text-align: left;
+  padding-bottom: 1rem;
 }
 
 button {
