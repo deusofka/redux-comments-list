@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 
 function CommentBox () {
   const [input, setInput] = useState('')
@@ -31,4 +32,4 @@ function CommentBox () {
   )
 }
 
-export default CommentBox
+export default connect(null)(CommentBox)

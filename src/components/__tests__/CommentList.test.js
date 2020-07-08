@@ -1,12 +1,15 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
+import Root from '../../Root'
 import CommentList from '../CommentList'
 
 let wrapper
 
 beforeEach(() => {
-  wrapper = shallow(
-    <CommentList comments={['This is comment #1', 'This is comment #2']} />
+  wrapper = mount(
+    <Root>
+      <CommentList />
+    </Root>
   )
 })
 
