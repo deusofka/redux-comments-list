@@ -23,3 +23,27 @@ it('handles action of type SAVE_COMMENT', () => {
     })
   ).toEqual(['Live long and prosper', 'May the force be with you'])
 })
+
+it('returns the same state for other action types', () => {
+  expect(commentsReducer([], {})).toEqual([])
+
+  expect(
+    commentsReducer([], {
+      type: 'INVALID'
+    })
+  ).toEqual([])
+
+  expect(
+    commentsReducer([], {
+      type: 'INVALID',
+      payload: 'Live long and prosper'
+    })
+  ).toEqual([])
+
+  expect(
+    commentsReducer(['Live long and prosper'], {
+      type: 'INVALID',
+      payload: 'May the force be with you'
+    })
+  ).toEqual(['Live long and prosper'])
+})
