@@ -1,8 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { fetchComments } from '../actions'
 
-function CommentList ({ comments }) {
-  function handleClick (event) {}
+function CommentList ({ fetchComments, comments }) {
+  function handleClick (event) {
+    event.target.blur()
+    fetchComments()
+  }
 
   return (
     <div id='comment_list'>
@@ -23,4 +27,4 @@ const mapStateToProps = state => ({
   comments: state.comments
 })
 
-export default connect(mapStateToProps)(CommentList)
+export default connect(mapStateToProps, { fetchComments })(CommentList)
