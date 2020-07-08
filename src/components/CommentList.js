@@ -14,7 +14,7 @@ function CommentList ({ fetchComments, comments }) {
       <div id='vertical-box'>
         <div id='comments'>
           {comments.map((comment, index) => {
-            return <p key={index}>{comment}</p>
+            return <p className = 'comment' key={index}>{comment}</p>
           })}
         </div>
         <button id='inundate_button' onClick={handleClick}>Inundate</button>
