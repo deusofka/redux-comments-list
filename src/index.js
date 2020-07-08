@@ -1,15 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
 import App from './components/App'
-import store from './store'
+import Root from './Root'
 import './index.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Root>
       <App />
-    </Provider>
+    </Root>
   </React.StrictMode>,
   document.getElementById('root')
 )
