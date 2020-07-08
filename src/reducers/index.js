@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux'
-import commentReducer from './comment'
+import commentReducer from './comments'
 
 export default combineReducers({ comments: commentReducer })
