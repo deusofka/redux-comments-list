@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { saveComment } from '../actions'
 
-function CommentBox () {
+function CommentBox ({ saveComment }) {
   const [input, setInput] = useState('')
 
   function handleChange (event) {
@@ -11,6 +12,7 @@ function CommentBox () {
   function handleClick (event) {
     setInput('')
     event.target.blur()
+    saveComment(input)
   }
 
   return (
@@ -32,4 +34,4 @@ function CommentBox () {
   )
 }
 
-export default connect(null)(CommentBox)
+export default connect(null, { saveComment })(CommentBox)
