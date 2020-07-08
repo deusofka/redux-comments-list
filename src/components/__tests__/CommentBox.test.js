@@ -13,6 +13,10 @@ beforeEach(() => {
   )
 })
 
+afterEach(() => {
+  wrapper.unmount()
+})
+
 it('renders', () => {
   expect(wrapper.exists()).toBe(true)
 })
