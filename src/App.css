@@ -40,7 +40,7 @@
   flex-grow: 0;
 }
 
-#comments,
+#vertical-box,
 #inputs {
   display: flex;
   flex-direction: column;
@@ -50,12 +50,14 @@
   overflow-y: scroll;
 }
 
-#inputs > * {
+#inputs > *,
+#vertical-box > * {
   width: 100%;
   border: #000 solid 1px;
 }
 
-#inputs > textarea {
+#inputs > textarea,
+#vertical-box > #comments {
   flex: 1;
   resize: none;
   padding: 0.4rem;
@@ -64,7 +66,11 @@
   outline: none;
 }
 
-#inputs > button {
+#comments > p {
+  text-align: left;
+}
+
+button {
   flex: 0;
   background-color: #000;
   color: #fff;
@@ -79,16 +85,12 @@
   transition-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
-#inputs > button:hover, #inputs > button:focus  {
-  position: relative;
+#inputs > button:hover,
+#inputs > button:focus {
   transform: skew(0, 5deg) scale(2);
 }
 
-#comments {
-  padding: 0.5rem;
-  border: #000 solid 1px;
-}
-
-#comments > p {
-  text-align: left;
+#vertical-box > button:hover,
+#vertical-box > button:focus {
+  transform: skew(0, -5deg) scale(2);
 }
