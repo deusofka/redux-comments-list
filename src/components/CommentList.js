@@ -17,7 +17,7 @@ function CommentList ({ fetchComments, comments }) {
             return <p key={index}>{comment}</p>
           })}
         </div>
-        <button onClick={handleClick}>Inundate</button>
+        <button id='inundate_button' onClick={handleClick}>Inundate</button>
       </div>
     </div>
   )
