@@ -29,8 +29,10 @@ function CommentList ({ fetchComments, comments }) {
   )
 }
 
-const mapStateToProps = state => ({
-  comments: state.comments
-})
+function mapStateToProps (state) {
+  return {
+    comments: state.comments
+  }
+}
 
 export default connect(mapStateToProps, { fetchComments })(CommentList)
