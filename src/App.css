@@ -121,23 +121,21 @@ button {
 }
 
 #inputs > .buttons > *:first-of-type {
-  border-right: #fff solid 1px;
+  margin-right: 1px;
 }
 
 #inputs > .buttons > *:last-of-type {
-  border-left: #fff solid 1px;
+  margin-left: 1px;
 }
 
 #inputs > .buttons > button:first-of-type:hover,
 #inputs > .buttons > button:first-of-type:focus {
   transform: scale(2) translate(25%, -25%);
-  font-size: 0.75rem;
-  border: none;
+  margin-right: 0;
 }
 
 #inputs > .buttons > button:last-of-type:hover,
 #inputs > .buttons > button:last-of-type:focus {
   transform: scale(2) translate(-25%, -25%);
-  font-size: 0.75rem;
-  border: none;
+  margin-left: 0;
 }
