@@ -1,13 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchComments } from '../actions'
 
-function CommentList ({ fetchComments, comments }) {
-  function handleClick (event) {
-    event.target.blur()
-    fetchComments()
-  }
-
+function CommentList ({ comments }) {
   return (
     <div id='comment_list'>
       <h2>Comment List</h2>
@@ -21,9 +15,6 @@ function CommentList ({ fetchComments, comments }) {
             )
           })}
         </div>
-        <button id='inundate_button' onClick={handleClick}>
-          Inundate
-        </button>
       </div>
     </div>
   )
@@ -35,4 +26,4 @@ function mapStateToProps (state) {
   }
 }
 
-export default connect(mapStateToProps, { fetchComments })(CommentList)
+export default connect(mapStateToProps)(CommentList)

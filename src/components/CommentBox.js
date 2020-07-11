@@ -1,19 +1,24 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { saveComment } from '../actions'
+import { saveComment, fetchComments } from '../actions'
 import requireAuth from './requireAuth'
 
-function CommentBox ({ saveComment }) {
+function CommentBox ({ saveComment, fetchComments }) {
   const [input, setInput] = useState('')
 
   function handleChange (event) {
     setInput(event.target.value)
   }
 
-  function handleClick (event) {
+  function handleSaveCommentClick (event) {
     setInput('')
     event.target.blur()
     saveComment(input)
+  }
+
+  function handleInundateClick (event) {
+    event.target.blur()
+    fetchComments()
   }
 
   return (
@@ -29,7 +34,10 @@ function CommentBox ({ saveComment }) {
           cols='30'
           rows='10'
         />
-        <button onClick={handleClick}>Save Comment</button>
+        <button onClick={handleSaveCommentClick}>Save Comment</button>
+        <button id='inundate_button' onClick={handleInundateClick}>
+          Inundate
+        </button>
       </div>
     </div>
   )
@@ -38,4 +46,6 @@ function CommentBox ({ saveComment }) {
 // comment is a higher-order component inside react-redux library
 // requireAuth is our own higher order component
 // higher order components let us avoid duplication of logic through reuse
-export default connect(null, { saveComment })(requireAuth(CommentBox))
+export default connect(null, { saveComment, fetchComments })(
+  requireAuth(CommentBox)
+)
