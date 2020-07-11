@@ -5,16 +5,14 @@ function CommentList ({ comments }) {
   return (
     <div id='comment_list'>
       <h2>Comment List</h2>
-      <div id='vertical-box'>
-        <div id='comments'>
-          {comments.map((comment, index) => {
-            return (
-              <p className='comment' key={index}>
-                {comment}
-              </p>
-            )
-          })}
-        </div>
+      <div id='comments'>
+        {comments.map((comment, index) => {
+          return (
+            <p className='comment' key={index}>
+              {comment}
+            </p>
+          )
+        })}
       </div>
     </div>
   )
