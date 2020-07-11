@@ -53,27 +53,22 @@ button {
   font-size: 1rem;
   outline: none;
   cursor: pointer;
-  transition-property: background-color transform;
+  transition-property: all;
   transition-duration: 0.1s;
   transition-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
 #navbar > .horizontal-box > button {
+  border-radius: 1rem;
+  border: #fff solid 1px;
   align-self: flex-end;
   flex: unset;
   width: 5rem;
-  border-radius: 1rem;
-  border: #fff solid 1px;
-}
-/* Comment Box */
-#comment_box {
-  border: 1px solid;
-  box-shadow: 5px 10px 2px #888;
 }
 
-/* Comment List */
-#comment_list {
-  border: 1px solid;
+/* Comment List, Comment Box */
+#comment_list,
+#comment_box {
   box-shadow: 5px 10px 2px #888;
 }
 
@@ -91,11 +86,6 @@ button {
   overflow: hidden;
 }
 
-#inputs > *,
-#comments {
-  border: #000 solid 1px;
-}
-
 #inputs > textarea,
 #comments {
   flex: 1;
@@ -103,6 +93,7 @@ button {
   padding: 0.4rem;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
+  border: #000 solid 1px;
   outline: none;
   overflow: scroll;
 }
@@ -120,12 +111,33 @@ button {
   padding-bottom: 1rem;
 }
 
-#inputs > button:first-of-type:hover,
-#inputs > button:first-of-type:focus {
-  transform: skew(0, 5deg) scale(2);
+#inputs > .buttons {
+  display: flex;
 }
 
-#inputs > button:last-of-type:hover,
-#inputs > button:last-of-type:focus {
-  transform: skew(0, -5deg) scale(2);
+#inputs > .buttons > button {
+  flex: 1;
+  border: none;
+}
+
+#inputs > .buttons > *:first-of-type {
+  border-right: #fff solid 1px;
+}
+
+#inputs > .buttons > *:last-of-type {
+  border-left: #fff solid 1px;
+}
+
+#inputs > .buttons > button:first-of-type:hover,
+#inputs > .buttons > button:first-of-type:focus {
+  transform: scale(2) translate(25%, -25%);
+  font-size: 0.75rem;
+  border: none;
+}
+
+#inputs > .buttons > button:last-of-type:hover,
+#inputs > .buttons > button:last-of-type:focus {
+  transform: scale(2) translate(-25%, -25%);
+  font-size: 0.75rem;
+  border: none;
 }
