@@ -35,4 +35,7 @@ function CommentBox ({ saveComment }) {
   )
 }
 
+// comment is a higher-order component inside react-redux library
+// requireAuth is our own higher order component
+// higher order components let us avoid duplication of logic through reuse
 export default connect(null, { saveComment })(requireAuth(CommentBox))
