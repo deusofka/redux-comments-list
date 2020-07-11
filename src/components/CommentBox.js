@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { saveComment } from '../actions'
+import requireAuth from './requireAuth'
 
 function CommentBox ({ saveComment }) {
   const [input, setInput] = useState('')
@@ -34,4 +35,4 @@ function CommentBox ({ saveComment }) {
   )
 }
 
-export default connect(null, { saveComment })(CommentBox)
+export default connect(null, { saveComment })(requireAuth(CommentBox))
