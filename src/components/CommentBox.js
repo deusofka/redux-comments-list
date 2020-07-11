@@ -13,7 +13,7 @@ function CommentBox ({ saveComment, fetchComments }) {
   function handleSaveCommentClick (event) {
     setInput('')
     event.target.blur()
-    saveComment(input)
+    if (input.trim() !== '') saveComment(input)
   }
 
   function handleInundateClick (event) {
