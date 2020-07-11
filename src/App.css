@@ -64,7 +64,6 @@ button {
   width: 5rem;
   border-radius: 1rem;
   border: #fff solid 1px;
-
 }
 /* Comment Box */
 #comment_box {
@@ -83,7 +82,6 @@ button {
   flex-grow: 0;
 }
 
-#vertical-box,
 #inputs {
   display: flex;
   flex-direction: column;
@@ -94,21 +92,27 @@ button {
 }
 
 #inputs > *,
-#vertical-box > * {
-  width: 100%;
+#comments {
   border: #000 solid 1px;
 }
 
 #inputs > textarea,
-#vertical-box > #comments {
+#comments {
   flex: 1;
   resize: none;
   padding: 0.4rem;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   outline: none;
-  max-height: 8.5rem;
   overflow: scroll;
+}
+
+#inputs > textarea {
+  max-height: 8.5rem;
+}
+
+#comments {
+  margin: 0.5rem;
 }
 
 #comments > p {
@@ -116,12 +120,12 @@ button {
   padding-bottom: 1rem;
 }
 
-#inputs > button:hover,
-#inputs > button:focus {
+#inputs > button:first-of-type:hover,
+#inputs > button:first-of-type:focus {
   transform: skew(0, 5deg) scale(2);
 }
 
-#vertical-box > button:hover,
-#vertical-box > button:focus {
+#inputs > button:last-of-type:hover,
+#inputs > button:last-of-type:focus {
   transform: skew(0, -5deg) scale(2);
 }
