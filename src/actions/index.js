@@ -29,13 +29,19 @@ export function toggleIsAuthenticated () {
 }
 
 export function showAlert (message) {
-  return {
-    type: SHOW_ALERT,
-    payload: message
+  return function (dispatch) {
+    setTimeout(() => {
+      dispatch(hideAlert())
+    }, 1000)
+    dispatch({
+      type: SHOW_ALERT,
+      payload: message
+    })
   }
 }
 
 export function hideAlert () {
+  console.log('hide alert called')
   return {
     type: HIDE_ALERT
   }
