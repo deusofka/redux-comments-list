@@ -10,7 +10,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#root > *:not(#navbar) {
+#root > *:not(#navbar):not(#alerts) {
   margin: 2rem auto 0;
   display: flex;
   flex-direction: column;
@@ -70,6 +70,20 @@ button {
 #comment_list,
 #comment_box {
   box-shadow: 5px 10px 2px #888;
+}
+
+#alerts {
+  width: 20rem;
+  margin: auto;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#alerts > p {
+  background-color: #000;
+  color: #fff;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
 }
 
 #comments_list > h2,
