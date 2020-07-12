@@ -34,7 +34,7 @@ function CommentBox ({ saveComment, fetchComments }) {
           cols='30'
           rows='10'
         />
-        <div class='buttons'>
+        <div className='buttons'>
           <button onClick={handleSaveCommentClick}>Save Comment</button>
           <button id='inundate_button' onClick={handleInundateClick}>
             Inundate

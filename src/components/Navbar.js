@@ -6,7 +6,7 @@ import { toggleIsAuthenticated } from '../actions'
 const Navbar = ({ toggleIsAuthenticated, isAuthenticated }) => {
   return (
     <div id='navbar'>
-      <div class='horizontal-box'>
+      <div className='horizontal-box'>
         <div id='navbar_links'>
           <Link to='/'>Home</Link>
           <Link to='/post'>Post</Link>
