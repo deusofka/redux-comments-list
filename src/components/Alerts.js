@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 const Alerts = ({ alerts }) => {
   return (
-    <div>
+    <div id='alerts'>
       {alerts.map((alert, index) => (
         <p key={index}>{alert}</p>
       ))}
