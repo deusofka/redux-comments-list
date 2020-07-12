@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { toggleIsAuthenticated } from '../actions'
-import CommentList from './CommentList'
-import CommentBox from './CommentBox'
 
 const Navbar = ({ toggleIsAuthenticated, isAuthenticated }) => {
   return (
