@@ -41,7 +41,6 @@ export function showAlert (message) {
 }
 
 export function hideAlert () {
-  console.log('hide alert called')
   return {
     type: HIDE_ALERT
   }
