@@ -32,7 +32,7 @@ export function showAlert (message) {
   return function (dispatch) {
     setTimeout(() => {
       dispatch(hideAlert())
-    }, 1000)
+    }, 1500)
     dispatch({
       type: SHOW_ALERT,
       payload: message
