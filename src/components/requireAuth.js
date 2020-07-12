@@ -6,6 +6,7 @@ function requireAuth (ChildComponent) {
   function ComposedComponent ({ showAlert, isAuthenticated, ...rest }) {
     useEffect(() => {
       if (!isAuthenticated) showAlert('Please sign in to access this page!')
+      // eslint-disable-next-line
     }, [])
     return isAuthenticated ? <ChildComponent {...rest} /> : <Redirect to='/' />
   }
