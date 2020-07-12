@@ -4,6 +4,7 @@ import CommentBox from './CommentBox'
 import CommentList from './CommentList'
 import Navbar from './Navbar'
 import Error from './Error'
+import Alerts from './Alerts'
 import '../App.css'
 
 function App () {
@@ -15,6 +16,7 @@ function App () {
         <Route path='/post' component={CommentBox} />
         <Route component={Error} />
       </Switch>
+      <Alerts />
     </>
   )
 }
