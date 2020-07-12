@@ -1,5 +1,11 @@
 import axios from 'axios'
-import { SAVE_COMMENT, FETCH_COMMENTS, TOGGLE_IS_AUTHENTICATED } from './types'
+import {
+  SAVE_COMMENT,
+  FETCH_COMMENTS,
+  TOGGLE_IS_AUTHENTICATED,
+  SHOW_ALERT,
+  HIDE_ALERT
+} from './types'
 export function saveComment (comment) {
   return {
     type: SAVE_COMMENT,
@@ -19,5 +25,18 @@ export function fetchComments () {
 export function toggleIsAuthenticated () {
   return {
     type: TOGGLE_IS_AUTHENTICATED
+  }
+}
+
+export function showAlert (message) {
+  return {
+    type: SHOW_ALERT,
+    payload: message
+  }
+}
+
+export function hideAlert () {
+  return {
+    type: HIDE_ALERT
   }
 }
