@@ -13,12 +13,10 @@ export function saveComment (comment) {
   }
 }
 export function fetchComments () {
-  return async function (dispatch) {
-    const result = await axios('https://jsonplaceholder.typicode.com/comments')
-    dispatch({
-      type: FETCH_COMMENTS,
-      payload: result.data.map(comment => comment.name)
-    })
+  const response = axios('https://jsonplaceholder.typicode.com/comments')
+  return {
+    type: FETCH_COMMENTS,
+    payload: response
   }
 }
 
