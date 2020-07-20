@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3090
 const connectDB = require('./config/db')
+const port = process.env.PORT || 3090
 
 // Connect Database
 connectDB()
