@@ -69,7 +69,8 @@ button {
 /* Comment List, Comment Box */
 #comment_list,
 #comment_box,
-#login {
+#login,
+#signup {
   box-shadow: 5px 10px 2px #888;
 }
 
@@ -89,7 +90,8 @@ button {
 
 #comments_list > h2,
 #comment_box > h2,
-#login > h2 {
+#login > h2,
+#signup > h2 {
   flex-grow: 0;
 }
 
@@ -138,7 +140,8 @@ button {
   font-size: 0.75rem;
 }
 
-#login > button {
+#login > button,
+#signup > button {
   padding: 0.25rem;
   border: none;
   margin: 0.5rem;
