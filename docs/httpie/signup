@@ -1,0 +1,90 @@
+// 1. Signup, no email
+
+    Request: 
+        http POST localhost:3090/api/users
+
+    Response:
+        HTTP/1.1 400 Bad Request
+        Connection: keep-alive
+        Content-Length: 35
+        Content-Type: application/json; charset=utf-8
+        Date: Thu, 23 Jul 2020 11:03:28 GMT
+        ETag: W/"23-gTWyPe/6zrdZf+jad0BlffRGbjM"
+        X-Powered-By: Express
+
+        {
+            "error": "Please include an email"
+        }
+
+// 2. Signup, invalid email
+
+    Request: 
+        http POST localhost:3090/api/users email=man@inblack
+
+    Response:
+        HTTP/1.1 400 Bad Request
+        Connection: keep-alive
+        Content-Length: 40
+        Content-Type: application/json; charset=utf-8
+        Date: Thu, 23 Jul 2020 11:09:08 GMT
+        ETag: W/"28-KPnil8dT6GT/WQSF6Q43PTkqvmc"
+        X-Powered-By: Express
+
+        {
+            "error": "Please include a valid email"
+        }
+
+// 3. Signup, no password
+
+    Request: 
+        http POST localhost:3090/api/users email=man@in.black
+
+    Response:
+        HTTP/1.1 400 Bad Request
+        Connection: keep-alive
+        Content-Length: 37
+        Content-Type: application/json; charset=utf-8
+        Date: Thu, 23 Jul 2020 11:06:01 GMT
+        ETag: W/"25-4zW5U9CGG2zKsvYyl0TRl0iP6NI"
+        X-Powered-By: Express
+
+        {
+            "error": "Please include a password"
+        }
+
+
+// 4. Signup, invalid password
+
+    Request: 
+        http POST localhost:3090/api/users email=man@in.black password=manin
+
+    Response:
+        HTTP/1.1 400 Bad Request
+        Connection: keep-alive
+        Content-Length: 52
+        Content-Type: application/json; charset=utf-8
+        Date: Thu, 23 Jul 2020 11:10:58 GMT
+        ETag: W/"34-/FVvJRhxzKKFZb22GA4Rq5BF5Fo"
+        X-Powered-By: Express
+
+        {
+            "error": "Password must have at least 6 characters"
+        }
+
+// 5. Signup successful!
+
+    Request: 
+        http POST localhost:3090/api/users email=man@in.black password=maninblack
+
+    Response:
+        HTTP/1.1 200 OK
+        Connection: keep-alive
+        Content-Length: 195
+        Content-Type: application/json; charset=utf-8
+        Date: Thu, 23 Jul 2020 11:12:25 GMT
+        ETag: W/"c3-o/79J6OGc0LF6fRkHAU61Ph5Kcs"
+        X-Powered-By: Express
+
+        {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYxOTcwOTk0OGU1Y2YyZDcyOGM4MTBhIn0sImlhdCI6MTU5NTUwMjc0NSwiZXhwIjoxNTk1NTA2MzQ1fQ.P41Ka-C3J2j-5ygWeo_mPd26CkzZDNhCUYL9dccZKME"
+        }

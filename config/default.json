@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb://127.0.0.1:27017/users",
+  "jwtSecret": "fFfjJEI9392SDifn3Pqr2303850dqzxcnmXJ"
+}
