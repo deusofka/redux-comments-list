@@ -10,7 +10,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#root > *:not(#navbar):not(#alerts) {
+#root > #comment_box,
+#root > #comment_list,
+#root > #error,
+#root > #login,
+#root > #signup {
   margin: 2rem auto 0;
   display: flex;
   flex-direction: column;
@@ -145,6 +149,12 @@ button {
   padding: 0.25rem;
   border: none;
   margin: 0.5rem;
+}
+
+#root > p#sign_up_instead,
+#root > p#log_in_instead {
+  text-align: center;
+  margin-top: 1.25rem;
 }
 
 #inputs > textarea {
