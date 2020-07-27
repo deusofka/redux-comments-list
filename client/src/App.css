@@ -68,7 +68,8 @@ button {
 
 /* Comment List, Comment Box */
 #comment_list,
-#comment_box {
+#comment_box,
+#login {
   box-shadow: 5px 10px 2px #888;
 }
 
@@ -87,11 +88,13 @@ button {
 }
 
 #comments_list > h2,
-#comment_box > h2 {
+#comment_box > h2,
+#login > h2 {
   flex-grow: 0;
 }
 
-#inputs {
+#inputs,
+.fields {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -110,6 +113,35 @@ button {
   border: #000 solid 1px;
   outline: none;
   overflow: scroll;
+}
+
+.fields {
+  justify-content: center;
+}
+
+.fields > input {
+  height: 1.5rem;
+  border-radius: 0%;
+  outline: none;
+  border: none;
+  border: #000 solid 1px;
+  padding-left: 0.5rem;
+}
+
+.fields > input:first-of-type {
+  margin-bottom: 0.625rem;
+}
+
+.fields > label {
+  text-align: left;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+}
+
+#login > button {
+  padding: 0.25rem;
+  border: none;
+  margin: 0.5rem;
 }
 
 #inputs > textarea {

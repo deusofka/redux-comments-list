@@ -2,6 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import CommentBox from './CommentBox'
 import CommentList from './CommentList'
+import Login from './Login'
 import Navbar from './Navbar'
 import Error from './Error'
 import Alerts from './Alerts'
@@ -14,6 +15,7 @@ function App () {
       <Switch>
         <Route exact path='/' component={CommentList} />
         <Route path='/post' component={CommentBox} />
+        <Route path='/login' component={Login} />
         <Route component={Error} />
       </Switch>
       <Alerts />
