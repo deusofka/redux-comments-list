@@ -8,7 +8,11 @@ function requireAuth (ChildComponent) {
       if (!isAuthenticated) showAlert('Please sign in to access this page!')
       // eslint-disable-next-line
     }, [])
-    return isAuthenticated ? <ChildComponent {...rest} /> : <Redirect to='/' />
+    return isAuthenticated ? (
+      <ChildComponent {...rest} />
+    ) : (
+      <Redirect to='/login' />
+    )
   }
   function mapStateToProps (state) {
     return { isAuthenticated: state.isAuthenticated }
