@@ -1,5 +1,5 @@
 export const SAVE_COMMENT = 'SAVE_COMMENT'
 export const FETCH_COMMENTS = 'FETCH_COMMENTS'
-export const TOGGLE_IS_AUTHENTICATED = 'TOGGLE_IS_AUTHENTICATED'
+export const LOG_OUT = 'LOG_OUT'
 export const SHOW_ALERT = 'SHOW_ALERT'
 export const HIDE_ALERT = 'HIDE_ALERT'

@@ -1,8 +1,8 @@
-import { TOGGLE_IS_AUTHENTICATED } from '../actions/types'
+import { LOG_OUT } from '../actions/types'
 export default function (state = false, action) {
   switch (action.type) {
-    case TOGGLE_IS_AUTHENTICATED:
-      return !state
+    case LOG_OUT:
+      return false
     default:
       return state
   }

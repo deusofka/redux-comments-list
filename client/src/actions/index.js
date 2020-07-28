@@ -2,7 +2,7 @@ import axios from 'axios'
 import {
   SAVE_COMMENT,
   FETCH_COMMENTS,
-  TOGGLE_IS_AUTHENTICATED,
+  LOG_OUT,
   SHOW_ALERT,
   HIDE_ALERT
 } from './types'
@@ -20,9 +20,9 @@ export function fetchComments () {
   }
 }
 
-export function toggleIsAuthenticated () {
+export function logOut () {
   return {
-    type: TOGGLE_IS_AUTHENTICATED
+    type: LOG_OUT
   }
 }
 
