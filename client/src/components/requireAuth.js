@@ -5,7 +5,12 @@ import { showAlert } from '../actions'
 function requireAuth (ChildComponent) {
   function ComposedComponent ({ showAlert, isAuthenticated, ...rest }) {
     useEffect(() => {
-      if (!isAuthenticated) showAlert('Please sign in to access this page!')
+      if (!isAuthenticated) {
+        showAlert({
+          type: 'warn',
+          message: 'Please sign in to access this page!'
+        })
+      }
       // eslint-disable-next-line
     }, [])
     return isAuthenticated ? (

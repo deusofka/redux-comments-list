@@ -86,10 +86,13 @@ button {
 }
 
 #alerts > p {
-  background-color: #000;
   color: #fff;
   margin-top: 0.5rem;
   padding: 0.5rem;
+}
+
+#alerts > p.warn {
+  background-color: rgb(255, 166, 0);
 }
 
 #comments_list > h2,

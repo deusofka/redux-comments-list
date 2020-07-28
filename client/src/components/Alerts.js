@@ -5,7 +5,9 @@ const Alerts = ({ alerts }) => {
   return (
     <div id='alerts'>
       {alerts.map((alert, index) => (
-        <p key={index}>{alert}</p>
+        <p className={alert.type} key={index}>
+          {alert.message}
+        </p>
       ))}
     </div>
   )
