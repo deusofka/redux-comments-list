@@ -1,8 +1,9 @@
 import { LOG_OUT } from '../actions/types'
-export default function (state = false, action) {
+const initialState = { isAuthenticated: false, token: null }
+export default function (state = initialState, action) {
   switch (action.type) {
     case LOG_OUT:
-      return false
+      return { ...initialState }
     default:
       return state
   }

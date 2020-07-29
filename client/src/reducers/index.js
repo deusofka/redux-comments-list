@@ -5,6 +5,6 @@ import alertReducer from './alerts'
 
 export default combineReducers({
   comments: commentReducer,
-  isAuthenticated: authReducer,
+  auth: authReducer,
   alerts: alertReducer
 })
