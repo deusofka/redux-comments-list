@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Signup = () => {
+  const [formData, setFormData] = useState(() => ({
+    email: '',
+    password: ''
+  }))
+  const onChange = event =>
+    setFormData({ ...formData, [event.target.name]: event.target.value })
+  const onSubmit = event => {
+    event.preventDefault()
+    console.log('submitted')
+  }
   return (
     <>
       <form id='signup'>
@@ -14,10 +24,11 @@ const Signup = () => {
             id='password'
             name='password'
             type='password'
+            onChange={onChange}
             autoComplete='off'
           />
         </div>
-        <button>Submit</button>
+        <button onClick={onSubmit}>Submit</button>
       </form>
       <p id='log_in_instead'>
         Already have an account? <Link to='/login'>Log in</Link>
