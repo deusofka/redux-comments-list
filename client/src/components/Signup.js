@@ -18,7 +18,13 @@ const Signup = () => {
         <h2>Signup</h2>
         <div className='fields'>
           <label htmlFor='email'>Email</label>
-          <input id='email' name='email' type='text' autoComplete='off' />
+          <input
+            id='email'
+            name='email'
+            type='text'
+            onChange={onChange}
+            autoComplete='off'
+          />
           <label htmlFor='password'>Password</label>
           <input
             id='password'
