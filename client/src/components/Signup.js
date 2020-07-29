@@ -11,6 +11,7 @@ const Signup = ({ signUp, isAuthenticated, history }) => {
     if (isAuthenticated) {
       history.push('/post')
     }
+    // eslint-disable-next-line
   }, [isAuthenticated])
   const onChange = event =>
     setFormData({ ...formData, [event.target.name]: event.target.value })
