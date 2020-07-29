@@ -18,7 +18,7 @@ const Login = () => {
         <h2>Login</h2>
         <div className='fields'>
           <label htmlFor='email'>Email</label>
-          <input id='email' name='password' type='text' autoComplete='off' />
+          <input id='email' name='email' type='text' autoComplete='off' />
           <label htmlFor='password'>Password</label>
           <input
             id='password'
