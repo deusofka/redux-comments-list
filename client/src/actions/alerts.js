@@ -1,13 +1,13 @@
 import { SHOW_ALERT, HIDE_ALERT } from './types'
 
-export function showAlert (message) {
+export function showAlert (type, message) {
   return function (dispatch) {
     setTimeout(() => {
       dispatch(hideAlert())
     }, 1500)
     dispatch({
       type: SHOW_ALERT,
-      payload: message
+      payload: { type, message }
     })
   }
 }
