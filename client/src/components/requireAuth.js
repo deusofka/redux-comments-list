@@ -20,7 +20,9 @@ function requireAuth (ChildComponent) {
     )
   }
   function mapStateToProps (state) {
-    return { isAuthenticated: state.isAuthenticated }
+    return {
+      isAuthenticated: state.auth.isAuthenticated
+    }
   }
   return connect(mapStateToProps, { showAlert })(ComposedComponent)
 }
