@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom'
+import store from '../store'
+import setAuthHeader from '../utils/setAuthHeader'
+import { authorize } from '../actions/auth'
 import CommentBox from './CommentBox'
 import CommentList from './CommentList'
 import Login from './Login'
@@ -10,6 +13,10 @@ import Alerts from './Alerts'
 import '../App.css'
 
 function App () {
+  useEffect(() => {
+    setAuthHeader(localStorage.token)
+    if (localStorage.token) store.dispatch(authorize())
+  }, [])
   return (
     <>
       <Navbar />

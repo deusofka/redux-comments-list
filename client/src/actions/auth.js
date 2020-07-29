@@ -1,6 +1,22 @@
 import api from '../utils/api'
 import { showAlert } from './alerts'
-import { SIGN_UP, SIGN_UP_ERROR, LOG_OUT } from './types'
+import { AUTHORIZE, AUTH_ERROR, SIGN_UP, SIGN_UP_ERROR, LOG_OUT } from './types'
+
+export function authorize () {
+  return async function (dispatch) {
+    try {
+      await api.get('/auth')
+      dispatch({
+        type: AUTHORIZE
+      })
+    } catch (error) {
+      dispatch({
+        type: AUTH_ERROR
+      })
+      dispatch(showAlert('danger', error.message))
+    }
+  }
+}
 
 export function signUp (email, password) {
   return async function (dispatch) {
