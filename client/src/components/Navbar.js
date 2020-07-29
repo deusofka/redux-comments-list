@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { logOut } from '../actions'
+import { logOut } from '../actions/auth'
 
 const Navbar = ({ logOut, isAuthenticated }) => {
   return (

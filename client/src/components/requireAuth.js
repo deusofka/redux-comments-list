@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { showAlert } from '../actions'
+import { showAlert } from '../actions/alerts'
 function requireAuth (ChildComponent) {
   function ComposedComponent ({ showAlert, isAuthenticated, ...rest }) {
     useEffect(() => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { saveComment, fetchComments } from '../actions'
+import { saveComment, fetchComments } from '../actions/comments'
 import requireAuth from './requireAuth'
 
 function CommentBox ({ saveComment, fetchComments }) {
