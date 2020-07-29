@@ -4,16 +4,21 @@ import { Link } from 'react-router-dom'
 const Signup = () => {
   return (
     <>
-      <div id='signup'>
+      <form id='signup'>
         <h2>Signup</h2>
-        <div class='fields'>
+        <div className='fields'>
           <label htmlFor='email'>Email</label>
-          <input id='email' type='text' autocomplete='off' />
+          <input id='email' name='password' type='text' autoComplete='off' />
           <label htmlFor='password'>Password</label>
-          <input id='password' type='password' autocomplete='off' />
+          <input
+            id='password'
+            name='password'
+            type='password'
+            autoComplete='off'
+          />
         </div>
         <button>Submit</button>
-      </div>
+      </form>
       <p id='log_in_instead'>
         Already have an account? <Link to='/login'>Log in</Link>
       </p>
