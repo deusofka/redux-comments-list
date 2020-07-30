@@ -1,6 +1,14 @@
 import api from '../utils/api'
 import { showAlert } from './alerts'
-import { AUTHORIZE, AUTH_ERROR, SIGN_UP, SIGN_UP_ERROR, LOG_OUT } from './types'
+import {
+  AUTHORIZE,
+  AUTH_ERROR,
+  LOG_IN,
+  LOG_IN_ERROR,
+  SIGN_UP,
+  SIGN_UP_ERROR,
+  LOG_OUT
+} from './types'
 
 export function authorize () {
   return async function (dispatch) {
@@ -14,6 +22,18 @@ export function authorize () {
         type: AUTH_ERROR
       })
       dispatch(showAlert('danger', error.message))
+    }
+  }
+}
+
+export function logIn (email, password) {
+  return async function (dispatch) {
+    try {
+      const response = await api.post('/login', { email, password })
+      console.log({ loginResponse: response })
+      dispatch({ type: LOG_IN, payload: response.data.token })
+    } catch (error) {
+      dispatch({ type: LOG_IN_ERROR, payload: error.message })
     }
   }
 }

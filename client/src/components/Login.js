@@ -1,18 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { logIn } from '../actions/auth'
 
-const Login = () => {
+const Login = ({ logIn, isAuthenticated, history }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   })
 
+  useEffect(() => {
+    if (isAuthenticated) history.push('/post')
+    // eslint-disable-next-line
+  }, [isAuthenticated])
+
   const onChange = event =>
     setFormData({ ...formData, [event.target.name]: event.target.value })
 
   const onSubmit = event => {
+    logIn(formData.email, formData.password)
     event.preventDefault()
-    console.log('submitted')
   }
 
   return (
@@ -46,4 +53,10 @@ const Login = () => {
   )
 }
 
-export default Login
+function mapStateToProps (state) {
+  return {
+    isAuthenticated: state.auth.isAuthenticated
+  }
+}
+
+export default connect(mapStateToProps, { logIn })(Login)
