@@ -7,18 +7,22 @@ const Signup = ({ signUp, isAuthenticated, history }) => {
     email: '',
     password: ''
   })
+
   useEffect(() => {
     if (isAuthenticated) {
       history.push('/post')
     }
     // eslint-disable-next-line
   }, [isAuthenticated])
+
   const onChange = event =>
     setFormData({ ...formData, [event.target.name]: event.target.value })
+
   const onSubmit = event => {
     signUp(formData.email, formData.password)
     event.preventDefault()
   }
+
   return (
     <>
       <form id='signup'>

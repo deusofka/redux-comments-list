@@ -6,12 +6,15 @@ const Login = () => {
     email: '',
     password: ''
   })
+
   const onChange = event =>
     setFormData({ ...formData, [event.target.name]: event.target.value })
+
   const onSubmit = event => {
     event.preventDefault()
     console.log('submitted')
   }
+
   return (
     <>
       <form id='login'>
