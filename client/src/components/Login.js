@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
-  const [formData, setFormData] = useState(() => ({
+  const [formData, setFormData] = useState({
     email: '',
     password: ''
-  }))
+  })
   const onChange = event =>
     setFormData({ ...formData, [event.target.name]: event.target.value })
   const onSubmit = event => {

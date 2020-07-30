@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { signUp } from '../actions/auth'
 const Signup = ({ signUp, isAuthenticated, history }) => {
-  const [formData, setFormData] = useState(() => ({
+  const [formData, setFormData] = useState({
     email: '',
     password: ''
-  }))
+  })
   useEffect(() => {
     if (isAuthenticated) {
       history.push('/post')
