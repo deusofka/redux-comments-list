@@ -10,12 +10,13 @@ import {
   LOG_OUT
 } from './types'
 
-export function authorize () {
+export function authorize (token) {
   return async function (dispatch) {
     try {
       await api.get('/auth')
       dispatch({
-        type: AUTHORIZE
+        type: AUTHORIZE,
+        payload: token
       })
     } catch (error) {
       dispatch({

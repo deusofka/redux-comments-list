@@ -16,7 +16,7 @@ function App () {
   useEffect(() => {
     if (localStorage.token) {
       setAuthHeader(localStorage.token)
-      store.dispatch(authorize())
+      store.dispatch(authorize(localStorage.token))
     }
   }, [])
   return (

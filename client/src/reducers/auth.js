@@ -11,7 +11,7 @@ const initialState = { isAuthenticated: false, token: null }
 export default function (state = initialState, action) {
   switch (action.type) {
     case AUTHORIZE:
-      return { ...state, isAuthenticated: true }
+      return { isAuthenticated: true, token: action.payload }
     case LOG_IN:
     case SIGN_UP:
       localStorage.setItem('token', action.payload)
