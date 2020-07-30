@@ -14,8 +14,10 @@ import '../App.css'
 
 function App () {
   useEffect(() => {
-    setAuthHeader(localStorage.token)
-    if (localStorage.token) store.dispatch(authorize())
+    if (localStorage.token) {
+      setAuthHeader(localStorage.token)
+      store.dispatch(authorize())
+    }
   }, [])
   return (
     <>
