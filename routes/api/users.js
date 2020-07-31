@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const secret = require('config').get('jwtSecret')
 const User = require('../../models/User')
+const auth = require('../../middleware/auth')
 const checks = [
   check('email', 'Please include an email')
     .not()
@@ -48,6 +49,16 @@ router.post('/', checks, async function (req, res) {
     console.error(error)
     return res.status(500).json({ error: 'Internal Server Error' })
   }
+})
+
+router.get('/current', auth, async function (req, res) {
+  const user = await User.findById(req.user.id).select('-_id -password -__v')
+  // Ensure user exists in the database
+  if (!user) {
+    return res.status(401).json({ error: 'Authorization failed' })
+  }
+
+  res.status(200).json(user)
 })
 
 module.exports = router

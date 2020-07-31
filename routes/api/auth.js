@@ -13,7 +13,7 @@ router.get('/', auth, async function (req, res) {
     return res.status(401).json({ error: 'Authorization failed' })
   }
 
-  res.status(200).json(user)
+  res.status(200).send('Authorization successful')
 })
 
 module.exports = router

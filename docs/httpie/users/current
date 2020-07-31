@@ -1,14 +1,14 @@
 // 1. Authorization, missing token
 
     Request: 
-        http GET localhost:3090/api/auth
+        http GET localhost:3090/api/users/current
 
     Response:
         HTTP/1.1 401 Unauthorized
         Connection: keep-alive
         Content-Length: 25
         Content-Type: application/json; charset=utf-8
-        Date: Fri, 31 Jul 2020 23:07:47 GMT
+        Date: Thu, 23 Jul 2020 14:03:56 GMT
         ETag: W/"19-q2Bm7+mdFWdZjGQKaYxoPxF28os"
         X-Powered-By: Express
 
@@ -19,14 +19,14 @@
 // 2. Authorization, invalid token
 
     Request: 
-        http GET localhost:3090/api/auth authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyMzQ1NmEzYjQ1NDcxNTYxYmM5NDRjIn0sImlhdCI6MTU5NjIzNzA3NCwiZXhwIjoxNTk2MjQwNjc0fQ.DaiswbIne_NrgKJFwSeCXaSY78FDqJ_t4m1J5kLV9jt
+        http GET localhost:3090/api/users/current authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYxOTcwOTk0OGU1Y2YyZDcyOGM4MTBhIn0sImlhdCI6MTU5NTUxMjUwNiwiZXhwIjoxNTk1NjAyNTA2fQ.FDhBDeCKbd7BOJ8dzOiHZDb7qE-kCK-CnPJgzS8Qxww
 
     Response:
         HTTP/1.1 401 Unauthorized
         Connection: keep-alive
         Content-Length: 25
         Content-Type: application/json; charset=utf-8
-        Date: Fri, 31 Jul 2020 23:11:55 GMT
+        Date: Thu, 23 Jul 2020 14:17:59 GMT
         ETag: W/"19-1luTU257I9tvKUXOJotGBQDVDqk"
         X-Powered-By: Express
 
@@ -37,16 +37,18 @@
 // 3. Authorization successful!
 
     Request: 
-        http GET localhost:3090/api/auth authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyMzQ1NmEzYjQ1NDcxNTYxYmM5NDRjIn0sImlhdCI6MTU5NjIzNzA3NCwiZXhwIjoxNTk2MjQwNjc0fQ.DaiswbIne_NrgKJFwSeCXaSY78FDqJ_t4m1J5kLV9js
+        http GET localhost:3090/api/users/current authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYxOTcwOTk0OGU1Y2YyZDcyOGM4MTBhIn0sImlhdCI6MTU5NTUxMjUwNiwiZXhwIjoxNTk1NTE2MTA2fQ.3RwnTgD4j1qdShJd9aBMqopszMTxLC3E2EAIJtFuFmA
 
     Response:
         HTTP/1.1 200 OK
         Connection: keep-alive
         Content-Length: 24
-        Content-Type: text/html; charset=utf-8
-        Date: Fri, 31 Jul 2020 23:11:39 GMT
-        ETag: W/"18-rjoP7DzvcGkgQqqiQ/+GKX+fdrI"
+        Content-Type: application/json; charset=utf-8
+        Date: Thu, 23 Jul 2020 14:22:04 GMT
+        ETag: W/"18-pmr6xGVcrqBysx3a2J6di/KAvFc"
         X-Powered-By: Express
 
-        Authorization successful
+        {
+            "email": "man@in.black"
+        }
 
