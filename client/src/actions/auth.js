@@ -32,7 +32,6 @@ export function logIn (email, password) {
   return async function (dispatch) {
     try {
       const response = await api.post('/login', { email, password })
-      console.log({ loginResponse: response })
       dispatch({ type: LOG_IN, payload: response.data.token })
       dispatch(showAlert('success', 'Log in succesful!'))
       setTimeout(() => {
