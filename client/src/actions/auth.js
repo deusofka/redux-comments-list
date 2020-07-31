@@ -72,7 +72,10 @@ export function completeLoading () {
 }
 
 export function logOut () {
-  return {
-    type: LOG_OUT
+  return async function (dispatch) {
+    dispatch({
+      type: LOG_OUT
+    })
+    dispatch(showAlert('success', "You've been logged out successfully"))
   }
 }
