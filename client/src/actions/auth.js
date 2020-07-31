@@ -34,9 +34,10 @@ export function logIn (email, password) {
       const response = await api.post('/login', { email, password })
       console.log({ loginResponse: response })
       dispatch({ type: LOG_IN, payload: response.data.token })
-      dispatch(
-        showAlert('success', 'Log in succesful! You can now post a comment!')
-      )
+      dispatch(showAlert('success', 'Log in succesful!'))
+      setTimeout(() => {
+        dispatch(showAlert('success', 'You can now post a comment!'))
+      }, 2500)
     } catch (error) {
       dispatch({ type: LOG_IN_ERROR, payload: error.message })
       dispatch(showAlert('danger', error.message))
@@ -52,9 +53,10 @@ export function signUp (email, password) {
         type: SIGN_UP,
         payload: response.data.token
       })
-      dispatch(
-        showAlert('success', 'Sign up succesful! You can now post a comment!')
-      )
+      dispatch(showAlert('success', 'Sign up succesful!'))
+      setTimeout(() => {
+        dispatch(showAlert('success', 'You can now post a comment!'))
+      }, 2500)
     } catch (error) {
       dispatch({
         type: SIGN_UP_ERROR
