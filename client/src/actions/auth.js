@@ -23,7 +23,7 @@ export function authorize (token) {
       dispatch({
         type: AUTH_ERROR
       })
-      dispatch(showAlert('danger', error.message))
+      dispatch(showAlert('danger', error.response.data.error))
     }
   }
 }
@@ -38,8 +38,8 @@ export function logIn (email, password) {
         dispatch(showAlert('success', 'You can now post a comment!'))
       }, 2500)
     } catch (error) {
-      dispatch({ type: LOG_IN_ERROR, payload: error.message })
-      dispatch(showAlert('danger', error.message))
+      dispatch({ type: LOG_IN_ERROR, payload: error.response.data.error })
+      dispatch(showAlert('danger', error.response.data.error))
     }
   }
 }
@@ -60,7 +60,7 @@ export function signUp (email, password) {
       dispatch({
         type: SIGN_UP_ERROR
       })
-      dispatch(showAlert('danger', error.message))
+      dispatch(showAlert('danger', error.response.data.error))
     }
   }
 }
