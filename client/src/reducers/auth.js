@@ -20,11 +20,11 @@ export default function (state = initialState, action) {
     case COMPLETE_LOADING:
       return { ...state, loading: false }
     case AUTH_ERROR:
+    case LOG_OUT:
       localStorage.removeItem('token')
       return { ...initialState, loading: false }
     case LOG_IN_ERROR:
     case SIGN_UP_ERROR:
-    case LOG_OUT:
       return { ...initialState, loading: false }
     default:
       return state
