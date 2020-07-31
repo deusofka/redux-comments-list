@@ -34,6 +34,9 @@ export function logIn (email, password) {
       const response = await api.post('/login', { email, password })
       console.log({ loginResponse: response })
       dispatch({ type: LOG_IN, payload: response.data.token })
+      dispatch(
+        showAlert('success', 'Log in succesful! You can now post a comment!')
+      )
     } catch (error) {
       dispatch({ type: LOG_IN_ERROR, payload: error.message })
       dispatch(showAlert('danger', error.message))

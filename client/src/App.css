@@ -92,6 +92,10 @@ button {
   padding: 0.5rem;
 }
 
+#alerts > p.success {
+  background-color: rgb(78, 194, 0);
+}
+
 #alerts > p.warn {
   background-color: rgb(255, 166, 0);
 }
