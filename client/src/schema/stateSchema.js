@@ -72,7 +72,7 @@ export default {
         },
         token: {
           $id: '#/properties/auth/properties/token',
-          type: 'string',
+          type: ['string', 'null'],
           title: 'The token schema',
           description: 'An explanation about the purpose of this instance.',
           default: '',
