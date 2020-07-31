@@ -96,6 +96,10 @@ button {
   background-color: rgb(255, 166, 0);
 }
 
+#alerts > p.danger {
+  background-color: rgb(255, 0, 0);
+}
+
 #comments_list > h2,
 #comment_box > h2,
 #login > h2,

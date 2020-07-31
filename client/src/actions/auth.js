@@ -36,6 +36,7 @@ export function logIn (email, password) {
       dispatch({ type: LOG_IN, payload: response.data.token })
     } catch (error) {
       dispatch({ type: LOG_IN_ERROR, payload: error.message })
+      dispatch(showAlert('danger', error.message))
     }
   }
 }
@@ -55,6 +56,7 @@ export function signUp (email, password) {
       dispatch({
         type: SIGN_UP_ERROR
       })
+      dispatch(showAlert('danger', error.message))
     }
   }
 }
