@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import store from '../store'
 import setAuthHeader from '../utils/setAuthHeader'
-import { authorize } from '../actions/auth'
+import { authorize, completeLoading } from '../actions/auth'
 import CommentBox from './CommentBox'
 import CommentList from './CommentList'
 import Login from './Login'
@@ -14,10 +14,11 @@ import '../App.css'
 
 function App () {
   useEffect(() => {
-    if (localStorage.token) {
-      setAuthHeader(localStorage.token)
-      store.dispatch(authorize(localStorage.token))
-    }
+    const token = localStorage.token
+    if (token) {
+      setAuthHeader(token)
+      store.dispatch(authorize(token))
+    } else store.dispatch(completeLoading())
   }, [])
   return (
     <>

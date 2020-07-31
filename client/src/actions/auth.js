@@ -7,6 +7,7 @@ import {
   LOG_IN_ERROR,
   SIGN_UP,
   SIGN_UP_ERROR,
+  COMPLETE_LOADING,
   LOG_OUT
 } from './types'
 
@@ -55,6 +56,12 @@ export function signUp (email, password) {
         type: SIGN_UP_ERROR
       })
     }
+  }
+}
+
+export function completeLoading () {
+  return {
+    type: COMPLETE_LOADING
   }
 }
 
