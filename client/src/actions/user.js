@@ -6,7 +6,6 @@ export function getUser (token) {
   return async function (dispatch) {
     try {
       const user = await api.get('/users/current')
-      console.log({ user })
       dispatch({
         type: GET_USER,
         payload: user.data
