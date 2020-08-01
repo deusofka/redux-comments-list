@@ -34,13 +34,19 @@ export function logIn (email, password) {
     try {
       const response = await api.post('/login', { email, password })
       setAuthHeader(response.data.token)
-      dispatch({ type: LOG_IN, payload: response.data.token })
+      dispatch({
+        type: LOG_IN,
+        payload: response.data.token
+      })
       dispatch(showAlert('success', 'Log in succesful!'))
       setTimeout(() => {
         dispatch(showAlert('success', 'You can now post a comment!'))
       }, 2500)
     } catch (error) {
-      dispatch({ type: LOG_IN_ERROR, payload: error.response.data.error })
+      dispatch({
+        type: LOG_IN_ERROR,
+        payload: error.response.data.error
+      })
       dispatch(showAlert('danger', error.response.data.error))
     }
   }
