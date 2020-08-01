@@ -46,8 +46,7 @@ export function logIn (email, password) {
       }, 2500)
     } catch (error) {
       dispatch({
-        type: LOG_IN_ERROR,
-        payload: error.response.data.error
+        type: LOG_IN_ERROR
       })
       dispatch(showAlert('danger', error.response.data.error))
     }
