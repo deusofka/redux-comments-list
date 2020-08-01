@@ -12,6 +12,10 @@ export const SIGN_UP_ERROR = 'SIGN_UP_ERROR'
 export const COMPLETE_LOADING = 'COMPLETE_LOADING'
 export const LOG_OUT = 'LOG_OUT'
 
+// USER
+export const GET_USER = 'GET_USER'
+export const GET_USER_ERROR = 'GET_USER_ERROR'
+
 // Alert
 export const SHOW_ALERT = 'SHOW_ALERT'
 export const HIDE_ALERT = 'HIDE_ALERT'

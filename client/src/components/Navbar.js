@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logOut } from '../actions/auth'
+import { getUser } from '../actions/user'
 
-const Navbar = ({ logOut, isAuthenticated }) => {
+const Navbar = ({ logOut, getUser, loading, isAuthenticated, user }) => {
+  useEffect(() => {
+    if (!loading && isAuthenticated) getUser()
+  }, [getUser, loading, isAuthenticated])
   return (
     <div id='navbar'>
       <div className='horizontal-box'>
@@ -11,6 +15,7 @@ const Navbar = ({ logOut, isAuthenticated }) => {
           <Link to='/'>Home</Link>
           <Link to='/post'>Post</Link>
         </div>
+        {user && user.email && <p id='navbar_email'>{user.email}</p>}
         {isAuthenticated && <button onClick={() => logOut()}>Log out</button>}
       </div>
     </div>
@@ -18,7 +23,9 @@ const Navbar = ({ logOut, isAuthenticated }) => {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  loading: state.auth.loading,
+  isAuthenticated: state.auth.isAuthenticated,
+  user: state.user
 })
 
-export default connect(mapStateToProps, { logOut })(Navbar)
+export default connect(mapStateToProps, { logOut, getUser })(Navbar)
