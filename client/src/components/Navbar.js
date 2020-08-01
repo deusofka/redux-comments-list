@@ -10,7 +10,7 @@ const Navbar = ({ logOut, getUser, loading, isAuthenticated, user }) => {
   }, [getUser, loading, isAuthenticated])
   return (
     <div id='navbar'>
-      <div className='horizontal-box'>
+      <div className='horizontal_box'>
         <div id='navbar_links'>
           <Link to='/'>Home</Link>
           <Link to='/post'>Post</Link>

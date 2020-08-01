@@ -34,7 +34,7 @@
   height: 2rem;
 }
 
-#navbar > .horizontal-box {
+#navbar > .horizontal_box {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -42,7 +42,7 @@
   padding: 0 1rem;
 }
 
-#navbar > .horizontal-box > #navbar_links > * {
+#navbar > .horizontal_box > #navbar_links > * {
   padding-right: 1rem;
   color: #fff;
   text-decoration: none;
@@ -63,7 +63,7 @@ button {
   transition-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
-#navbar > .horizontal-box > button {
+#navbar > .horizontal_box > button {
   border-radius: 1rem;
   border: #fff solid 1px;
   align-self: flex-end;
