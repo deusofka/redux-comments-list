@@ -1,6 +1,6 @@
 import api from '../utils/api'
 import { showAlert } from './alerts'
-import { GET_USER, GET_USER_ERROR } from './types'
+import { GET_USER, GET_USER_ERROR, RESET_USER } from './types'
 
 export function getUser (token) {
   return async function (dispatch) {
@@ -17,5 +17,11 @@ export function getUser (token) {
       })
       dispatch(showAlert('danger', error.response.data.error))
     }
+  }
+}
+
+export function resetUser () {
+  return {
+    type: RESET_USER
   }
 }

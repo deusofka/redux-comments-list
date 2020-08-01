@@ -1,5 +1,6 @@
 import api from '../utils/api'
 import setAuthHeader from '../utils/setAuthHeader'
+import { resetUser } from './user'
 import { showAlert } from './alerts'
 import {
   AUTHORIZE,
@@ -85,6 +86,7 @@ export function completeLoading () {
 export function logOut () {
   return async function (dispatch) {
     localStorage.removeItem('token')
+    dispatch(resetUser())
     dispatch({
       type: LOG_OUT
     })
