@@ -8,7 +8,9 @@ import {
   COMPLETE_LOADING,
   LOG_OUT
 } from '../actions/types'
+
 const initialState = { isAuthenticated: false, token: null, loading: true }
+
 export default function (state = initialState, action) {
   switch (action.type) {
     case AUTHORIZE:
