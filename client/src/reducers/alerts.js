@@ -2,7 +2,7 @@ import { SHOW_ALERT, HIDE_ALERT } from '../actions/types'
 export default function (state = [], action) {
   switch (action.type) {
     case SHOW_ALERT:
-      return [action.payload, ...state]
+      return [...state, action.payload]
     case HIDE_ALERT:
       return removeFirstItem(state)
     default:
