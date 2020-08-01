@@ -48,6 +48,15 @@
   text-decoration: none;
 }
 
+#navbar .box {
+  display: flex;
+  align-items: center;
+}
+
+#navbar .box > p {
+  margin-right: 1rem;
+}
+
 button {
   flex: 0;
   background-color: #000;
@@ -63,7 +72,7 @@ button {
   transition-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
-#navbar > .horizontal_box > button {
+#navbar > .horizontal_box > .box > button {
   border-radius: 1rem;
   border: #fff solid 1px;
   align-self: flex-end;

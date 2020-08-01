@@ -15,8 +15,10 @@ const Navbar = ({ logOut, getUser, loading, isAuthenticated, user }) => {
           <Link to='/'>Home</Link>
           <Link to='/post'>Post</Link>
         </div>
-        {user && user.email && <p id='navbar_email'>{user.email}</p>}
-        {isAuthenticated && <button onClick={() => logOut()}>Log out</button>}
+        <div className='box'>
+          {user && user.email && <p id='navbar_email'>{user.email}</p>}
+          {isAuthenticated && <button onClick={() => logOut()}>Log out</button>}
+        </div>
       </div>
     </div>
   )
