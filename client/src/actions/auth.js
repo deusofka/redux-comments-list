@@ -1,4 +1,5 @@
 import api from '../utils/api'
+import setAuthHeader from '../utils/setAuthHeader'
 import { showAlert } from './alerts'
 import {
   AUTHORIZE,
@@ -32,6 +33,7 @@ export function logIn (email, password) {
   return async function (dispatch) {
     try {
       const response = await api.post('/login', { email, password })
+      setAuthHeader(response.data.token)
       dispatch({ type: LOG_IN, payload: response.data.token })
       dispatch(showAlert('success', 'Log in succesful!'))
       setTimeout(() => {
@@ -48,6 +50,7 @@ export function signUp (email, password) {
   return async function (dispatch) {
     try {
       const response = await api.post('/users', { email, password })
+      setAuthHeader(response.data.token)
       await dispatch({
         type: SIGN_UP,
         payload: response.data.token
