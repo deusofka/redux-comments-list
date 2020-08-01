@@ -15,13 +15,11 @@ export default function (state = initialState, action) {
       return { isAuthenticated: true, token: action.payload, loading: false }
     case LOG_IN:
     case SIGN_UP:
-      localStorage.setItem('token', action.payload)
       return { isAuthenticated: true, token: action.payload, loading: false }
     case COMPLETE_LOADING:
       return { ...state, loading: false }
     case AUTH_ERROR:
     case LOG_OUT:
-      localStorage.removeItem('token')
       return { ...initialState, loading: false }
     case LOG_IN_ERROR:
     case SIGN_UP_ERROR:

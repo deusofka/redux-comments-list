@@ -33,6 +33,7 @@ export function logIn (email, password) {
   return async function (dispatch) {
     try {
       const response = await api.post('/login', { email, password })
+      localStorage.setItem('token', response.data.token)
       setAuthHeader(response.data.token)
       dispatch({
         type: LOG_IN,
@@ -56,6 +57,7 @@ export function signUp (email, password) {
   return async function (dispatch) {
     try {
       const response = await api.post('/users', { email, password })
+      localStorage.setItem('token', response.data.token)
       setAuthHeader(response.data.token)
       await dispatch({
         type: SIGN_UP,
@@ -82,6 +84,7 @@ export function completeLoading () {
 
 export function logOut () {
   return async function (dispatch) {
+    localStorage.removeItem('token')
     dispatch({
       type: LOG_OUT
     })
