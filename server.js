@@ -4,6 +4,7 @@ const connectDB = require('./config/db')
 const usersRouter = require('./routes/api/users')
 const loginRouter = require('./routes/api/login')
 const authRouter = require('./routes/api/auth')
+const commentsRouter = require('./routes/api/comments')
 const port = process.env.PORT || 3090
 
 // Connect Database
@@ -20,6 +21,7 @@ app.use(express.json())
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/comments', commentsRouter)
 
 app.listen(port, function () {
   console.log(`Server started listening to port ${port}`)
