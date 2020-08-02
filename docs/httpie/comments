@@ -1,0 +1,100 @@
+// 1. Post comment, no comment
+
+    Request: 
+        http POST localhost:3090/api/comments authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyMzQ1NmEzYjQ1NDcxNTYxYmM5NDRjIn0sImlhdCI6MTU5NjM4NzUxOCwiZXhwIjoxNTk2MzkxMTE4fQ.KUTeT5KyPyOx5x5Bnu3PlgHPXNUx3YgX4fpbx7jkkS4
+
+    Response:
+        HTTP/1.1 400 Bad Request
+        Connection: keep-alive
+        Content-Length: 27
+        Content-Type: application/json; charset=utf-8
+        Date: Sun, 02 Aug 2020 17:08:13 GMT
+        ETag: W/"1b-PGcSok8VAR6F/AHT6RSgKsGojpg"
+        X-Powered-By: Express
+
+        {
+            "error": "No comment sent"
+        }
+
+// 2. Post comment, no token
+
+    Request: 
+        http POST localhost:3090/api/comments comment='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+
+    Response:
+        HTTP/1.1 401 Unauthorized
+        Connection: keep-alive
+        Content-Length: 25
+        Content-Type: application/json; charset=utf-8
+        Date: Sun, 02 Aug 2020 17:05:28 GMT
+        ETag: W/"19-q2Bm7+mdFWdZjGQKaYxoPxF28os"
+        X-Powered-By: Express
+
+        {
+            "error": "Missing token"
+        }
+
+// 3. Post comment, invalid token
+
+    Request: 
+        http POST localhost:3090/api/comments authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyMzQ1NmEzYjQ1NDcxNTYxYmM5NDRjIn0sImlhdCI6MTU5NjM4NzUxOCwiZXhwIjoxNTk2MzkxMTE4fR.KUTeT5KyPyOx5x5Bnu3PlgHPXNUx3YgX4fpbx7jkkS4 comment='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+
+    Response:
+        HTTP/1.1 401 Unauthorized
+        Connection: keep-alive
+        Content-Length: 25
+        Content-Type: application/json; charset=utf-8
+        Date: Sun, 02 Aug 2020 17:03:55 GMT
+        ETag: W/"19-1luTU257I9tvKUXOJotGBQDVDqk"
+        X-Powered-By: Express
+
+        {
+            "error": "Invalid token"
+        }
+
+// 4. Post comment, successful!
+
+    Request: 
+        http POST localhost:3090/api/comments authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyMzQ1NmEzYjQ1NDcxNTYxYmM5NDRjIn0sImlhdCI6MTU5NjM4NzUxOCwiZXhwIjoxNTk2MzkxMTE4fQ.KUTeT5KyPyOx5x5Bnu3PlgHPXNUx3YgX4fpbx7jkkS4 comment='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+
+    Response:
+        HTTP/1.1 200 OK
+        Connection: keep-alive
+        Content-Length: 68
+        Content-Type: application/json; charset=utf-8
+        Date: Sun, 02 Aug 2020 17:01:06 GMT
+        ETag: W/"44-Dw7KPSsTMIek0J53TVHIYW/xxSs"
+        X-Powered-By: Express
+
+        {
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+
+// 1. Get comments, successful!
+    
+    Request: 
+        http localhost:3090/api/comments
+
+    Response:
+        HTTP/1.1 200 OK
+        Connection: keep-alive
+        Content-Length: 261
+        Content-Type: application/json; charset=utf-8
+        Date: Sun, 02 Aug 2020 17:19:35 GMT
+        ETag: W/"105-oeZsTiDeXEc760StKzYy3mvYgng"
+        X-Powered-By: Express
+
+        [
+            {
+                "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+                "title": "Nunc malesuada arcu in consectetur faucibus."
+            },
+            {
+                "title": "Maecenas porta ligula sed convallis feugiat."
+            },
+            {
+                "title": "Vestibulum et odio suscipit, feugiat nisi sed, scelerisque diam."
+            }
+        ]
