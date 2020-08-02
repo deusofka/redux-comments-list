@@ -26,7 +26,6 @@ export function authorize (token) {
       dispatch({
         type: AUTH_ERROR
       })
-      dispatch(showAlert('danger', error.response.data.error))
     }
   }
 }
