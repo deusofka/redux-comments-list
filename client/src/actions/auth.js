@@ -22,6 +22,7 @@ export function authorize (token) {
         payload: token
       })
     } catch (error) {
+      localStorage.removeItem('token')
       dispatch({
         type: AUTH_ERROR
       })
