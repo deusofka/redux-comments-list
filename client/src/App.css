@@ -191,3 +191,9 @@ button {
   text-align: left;
   padding-bottom: 1rem;
 }
+
+#inputs > button:hover,
+#inputs > button:focus {
+  position: relative;
+  transform: skew(0, 5deg) scale(2);
+}
