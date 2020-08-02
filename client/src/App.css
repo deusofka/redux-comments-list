@@ -191,32 +191,3 @@ button {
   text-align: left;
   padding-bottom: 1rem;
 }
-
-#inputs > .buttons {
-  display: flex;
-}
-
-#inputs > .buttons > button {
-  flex: 1;
-  border: none;
-}
-
-#inputs > .buttons > *:first-of-type {
-  margin-right: 1px;
-}
-
-#inputs > .buttons > *:last-of-type {
-  margin-left: 1px;
-}
-
-#inputs > .buttons > button:first-of-type:hover,
-#inputs > .buttons > button:first-of-type:focus {
-  transform: scale(2) translate(25%, -25%);
-  margin-right: 0;
-}
-
-#inputs > .buttons > button:last-of-type:hover,
-#inputs > .buttons > button:last-of-type:focus {
-  transform: scale(2) translate(-25%, -25%);
-  margin-left: 0;
-}
