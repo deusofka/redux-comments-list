@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb://127.0.0.1:27017/users",
+  "mongoURI": "mongodb://127.0.0.1:27017/comments_list",
   "jwtSecret": "fFfjJEI9392SDifn3Pqr2303850dqzxcnmXJ"
 }
