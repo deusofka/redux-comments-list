@@ -58,12 +58,19 @@
   color: #fff;
 }
 
+input,
+textarea {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
 button {
   background-color: #000;
   color: #fff;
   border-top: none;
   text-align: center;
   padding: 0.25rem 0;
+  border: #000 solid 1px;
   font-size: 1rem;
   outline: none;
   cursor: pointer;
