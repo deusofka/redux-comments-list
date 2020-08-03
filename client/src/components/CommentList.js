@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+import { fetchComments } from '../actions/comments'
 
-function CommentList ({ comments }) {
+function CommentList ({ fetchComments, comments }) {
+  useEffect(() => {
+    fetchComments()
+  }, [fetchComments])
   return (
     <div id='comment_list'>
       <h2>Comment List</h2>
@@ -24,4 +28,4 @@ function mapStateToProps (state) {
   }
 }
 
-export default connect(mapStateToProps)(CommentList)
+export default connect(mapStateToProps, { fetchComments })(CommentList)

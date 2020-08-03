@@ -1,5 +1,7 @@
 // Comments
 export const SAVE_COMMENT = 'SAVE_COMMENT'
+export const FETCH_COMMENTS = 'FETCH_COMMENTS'
+export const FETCH_COMMENTS_ERROR = 'FETCH_COMMENTS_ERROR'
 
 // Auth
 export const AUTHORIZE = 'AUTHORIZE'
